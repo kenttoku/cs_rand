@@ -3,7 +3,6 @@ INT_MIN = -2147483648
 INT_MAX = 2147483647
 MBIG = INT_MAX
 MSEED = 161803398
-MZ = 0
 
 class CSRandom
 	attr_accessor :inext, :inextp, :seed_array
@@ -80,7 +79,7 @@ class CSRandom
 
 	# 	d = result
 	# 	d += (INT_MAX - 1)
-	# 	d /= 2.0 * INT_MAX - 1
+	# 	d /= 2 * INT_MAX - 1
 	# 	d
 	# end
 
@@ -113,11 +112,3 @@ class CSRandom
 		sample
 	end
 end
-
-a = CSRandom.new(1465534)
-puts a.next
-puts "--------"
-puts a.next(105)
-puts "--------"
-puts a.next(100,105)
-puts "--------"
